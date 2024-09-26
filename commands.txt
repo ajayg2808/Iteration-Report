@@ -1,0 +1,5 @@
+pip install virtualenv
+virtualenv pyenv
+pip install nodeenv
+nodeenv --version
+nodeenv nenv

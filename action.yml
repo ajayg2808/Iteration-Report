@@ -1,0 +1,31 @@
+name: 'Iteration Report'
+description: 'Generates reports for GitHub projects Iteration field.'
+author: 'Ajay Gaikwad'
+branding:
+  icon: 'pie-chart'
+  color: 'purple'
+inputs:
+  owner:
+    description: The account name of the GitHub organization.
+    required: true
+  number:
+    description: Project number as you see it in the URL of the project.
+    required: true
+  token:
+    description: Personal access token or an OAuth token. the write:org scope is required for read-write access.
+    required: true
+  iteration-field:
+    description: The name of your iteration field.
+    required: true
+  iteration:
+    description: Name of iteration (supports - previous, current, next).
+    required: true
+  statuses:
+    description: Statuses of the issues for report generation.
+    required: false
+  excluded-statuses:
+    description: Statuses of the issues that should not be reported. This setting takes precedence over statuses.
+    required: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
