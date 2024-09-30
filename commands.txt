@@ -3,3 +3,5 @@ virtualenv pyenv
 pip install nodeenv
 nodeenv --version
 nodeenv nenv
+
+npm i -g @vercel/ncc

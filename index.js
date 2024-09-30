@@ -3,13 +3,13 @@ import GitHubProject from 'github-project';
 
 const run = async () => {
     try {
-        const owner = "Arc-i-Tech"//core.getInput('owner');
-        const number = 2//Number(core.getInput('number'));
-        const token = ""//core.getInput('token');
-        const iterationField = ""//core.getInput('iteration-field'); // name of the iteration field
-        const iterationType = ""//core.getInput('iteration'); // iteration name
-        const statuses = None//core.getInput('statuses').split(',');
-        const coreExclusedStatuses = None//core.getInput('excluded-statuses');
+        const owner = core.getInput('owner');
+        const number = Number(core.getInput('number'));
+        const token = core.getInput('token');
+        const iterationField = core.getInput('iteration-field'); // name of the iteration field
+        const iterationType = core.getInput('iteration'); // iteration name
+        const statuses = core.getInput('statuses').split(',');
+        const coreExclusedStatuses = core.getInput('excluded-statuses');
         const excludedStatuses = coreExclusedStatuses ? coreExclusedStatuses.split(',') : [];
 
         const project = new GitHubProject({ owner, number, token, fields: { iteration: iterationField } });
@@ -52,8 +52,10 @@ const run = async () => {
             }
         });
         // Collect details for filtered issues like assignee, associated pull request etc.
+        core.setOutput("Result", filteredItems)
     } catch (error) {
         core.setFailed(error.message);
+        console.log(error.message)
     }
 };
 
