@@ -15,4 +15,4 @@ jobs:
           number: 6
           token: ${{ secrets.ACCESS_TOKEN }}
           iteration-field: Iteration
-          iteration: current
+          iteration: Iteration 1
