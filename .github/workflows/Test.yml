@@ -1,6 +1,6 @@
 run-name: Test
 on:
-  repository_dispatch: # To support manual trigger.
+  workflow_dispatch # To support manual trigger.
 
 jobs:
   test-run:
