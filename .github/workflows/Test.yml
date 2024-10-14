@@ -1,0 +1,18 @@
+run-name: Test
+on:
+  repository_dispatch: # To support manual trigger.
+
+jobs:
+  test-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Testing action
+        id: testing-action
+        uses: ajayg2808/Iteration-Report@main
+        with:
+          owner: ajayg2808
+          number: 6
+          token: ${{ secrets.ACCESS_TOKEN }}
+          iteration-field: Iteration
+          iteration: current
