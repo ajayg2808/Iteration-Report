@@ -10,6 +10,14 @@ const run = async () => {
         const iterationType = core.getInput('iteration'); // iteration name
         const statuses = core.getInput('statuses').split(',');
         const coreExclusedStatuses = core.getInput('excluded-statuses');
+
+        // Test outputs:
+        core.setOutput('Owner', owner);
+        core.setOutput('Number', number);
+        core.setOutput('Iteration', iterationType);
+        core.setOutput('Iteration-field', iterationField);
+
+
         const excludedStatuses = coreExclusedStatuses ? coreExclusedStatuses.split(',') : [];
 
         const project = new GitHubProject({ owner, number, token, fields: { iteration: iterationField } });
