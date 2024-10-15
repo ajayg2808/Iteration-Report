@@ -18,4 +18,4 @@ jobs:
 
     - name: Print outputs
       if: always()
-      run: echo $${{ steps.*.outputs.*}}
+      run: echo `$${{ toJson(steps.*.outputs.*) }}`
