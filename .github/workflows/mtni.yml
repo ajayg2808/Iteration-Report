@@ -1,0 +1,21 @@
+on:
+  workflow_dispatch
+
+jobs:
+  move-to-next-iteration:
+    name: Move to next iteration
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: blombard/move-to-next-iteration@master
+      with:
+        owner: ajayg2808
+        number: 6
+        token: ${{ secrets.ACCESS_TOKEN }}
+        iteration-field: Iteration
+        iteration: current
+        new-iteration: next
+
+    - name: Print outputs
+      if: always()
+      run: echo $${{ steps.*.outputs.*}}
