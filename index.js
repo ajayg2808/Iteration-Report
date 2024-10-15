@@ -13,7 +13,7 @@ const run = async () => {
 
         const excludedStatuses = coreExclusedStatuses ? coreExclusedStatuses.split(',') : [];
 
-        const project = new GitHubProject({ owner, number, token, fields: { status: "open" } });
+        const project = new GitHubProject({ owner, number, token, fields: { Status: "Backlog" } });
 
         const projectData = await project.getProperties();
 
