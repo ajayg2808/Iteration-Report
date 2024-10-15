@@ -16,3 +16,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           iteration-field: Iteration
           iteration: Iteration 1
+
+      - name: Print output
+        id: print-output
+        run: echo ${{ toJson(steps.*.outputs.*) }}
