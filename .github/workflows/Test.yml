@@ -19,4 +19,5 @@ jobs:
 
       - name: Print output
         id: print-output
+        if: always()
         run: echo ${{ toJson(steps.*.outputs.*) }}
